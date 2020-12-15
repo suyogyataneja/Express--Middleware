@@ -4,3 +4,4 @@ In this a basic Middleware function is created. Middleware functions are used to
 IMPORTANT POINTS TO NOTE:
 
 1. Whenever a request arrives to the server, first of all it goes to the middleware functions and then to the handlers.
+2. Order of middleware does matter
