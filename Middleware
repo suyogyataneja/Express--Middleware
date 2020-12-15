@@ -1,0 +1,35 @@
+let express = require('express');
+let app = express();
+
+//let bodyParser = require('body-parser');
+
+
+//app.use(bodyParser.urlencoded(
+//    {
+ //   extended:false
+//}));
+
+//middleware
+
+app.use(function(req,res,next){
+    console.log("Middleware-1")
+    next();
+})
+app.use(function(req,res,next){
+    console.log("Middleware-2")
+    next();
+})
+
+app.get('/', function(req, res){
+    console.log('Endpoint-1')
+    res.send("hello world- 2020");
+
+});
+
+app.get('/data', function(req,res){
+    console.log('endpoint-2')
+    res.send("welcome to the data page")
+});
+
+//listen to the port 
+app.listen(8080);
